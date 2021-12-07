@@ -6,8 +6,8 @@ class Api::V1::AuthController < ApplicationController
       @user.isLoggedIn = true
 
       # collect user reservations
-      user_reservations = []
-      Reservation.where(user_id: @user.id).each do |r|
+      user_reservations = @user.reservations
+      @user.reservations.each do |r|
         user_reservations << r
       end
 
