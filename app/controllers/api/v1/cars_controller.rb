@@ -24,8 +24,6 @@ class Api::V1::CarsController < ApplicationController
         :finance_fee, 
         :purchase_fee, 
         :amount_payable,
-        :start_date,
-        :end_date,
         :category_id
     )
   end

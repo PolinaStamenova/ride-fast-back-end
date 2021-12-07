@@ -6,8 +6,6 @@ class CreateCars < ActiveRecord::Migration[6.1]
       t.decimal :finance_fee
       t.decimal :purchase_fee
       t.decimal :amount_payable
-      t.string :start_date
-      t.string :end_date
       t.references :category, null: false, foreign_key: true
 
       t.timestamps

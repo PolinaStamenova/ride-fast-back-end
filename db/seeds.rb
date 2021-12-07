@@ -34,9 +34,7 @@ Car.create(
     description: 'Nice small car',
     finance_fee: 800.0,
     purchase_fee: 1200.0,
-    amount_payable: 1000.0,
-    start_date: "2021-12-1",
-    end_date: "2021-12-30"
+    amount_payable: 1000.0
 )
 
 Car.create(
@@ -45,9 +43,7 @@ Car.create(
     description: 'Nice big car',
     finance_fee: 800.0,
     purchase_fee: 1200.0,
-    amount_payable: 1000.0,
-    start_date: "2021-12-1",
-    end_date: "2021-12-30"
+    amount_payable: 1000.0
 )
 
 
