@@ -4,7 +4,19 @@ class Api::V1::AuthController < ApplicationController
 
     if @user
       @user.isLoggedIn = true
-      render json: {message: "Signin successfully", data: @user}, status: :created
+
+      # collect user reservations
+      user_reservations = []
+      Reservation.where(user_id: @user.id).each do |r|
+        user_reservations << r
+      end
+
+      render json: {
+        message: "Signin successfully", 
+        data: @user, 
+        reservations: user_reservations
+      }, status: :created
+      
     else
       render json: {message: "User does not exist"}, status: :unauthorized
     end
