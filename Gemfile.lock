@@ -208,6 +208,7 @@ DEPENDENCIES
   rails (~> 6.1.4, >= 6.1.4.1)
   rspec-rails
   rswag (~> 2.4)
+  rswag-specs
   rubocop (>= 1.0, < 2.0)
   tzinfo-data
 
