@@ -9,9 +9,9 @@ class Api::V1::CarsController < ApplicationController
     @car = Car.new(cars_params)
 
     if @car.save
-      render json: { message: "Car created successfully", data: @car }, status: :created
+      render json: { message: 'Car created successfully', data: @car }, status: :created
     else
-      render json: { message: "There was an error" }, status: :unauthorized
+      render json: { message: 'There was an error' }, status: :unauthorized
     end
   end
 
