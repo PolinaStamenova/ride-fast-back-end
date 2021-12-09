@@ -1,9 +1,7 @@
 class Car < ApplicationRecord
-  belongs_to :category
-  has_many :reservations
   validates :name, presence: true
-  validates :finance_fee, presence: true
-  validates :purchase_fee, presence: true
-  validates :amount_payable, presence: true
-  validates :category_id, presence: true
+  validates :image, presence: true
+  validates :price, presence: true
+  validates :duration, presence: true
+  validates :number_of_seats, presence: true
 end

@@ -10,26 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_07_024755) do
+ActiveRecord::Schema.define(version: 2021_12_09_165927) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "cars", force: :cascade do |t|
     t.string "name"
+    t.string "image"
     t.text "description"
-    t.decimal "finance_fee"
-    t.decimal "purchase_fee"
-    t.decimal "amount_payable"
-    t.string "start_date"
-    t.string "end_date"
-    t.bigint "category_id", null: false
+    t.integer "price"
+    t.integer "number_of_seats"
+    t.integer "duration"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["category_id"], name: "index_cars_on_category_id"
   end
 
-  create_table "categories", force: :cascade do |t|
+  create_table "cities", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -37,12 +34,14 @@ ActiveRecord::Schema.define(version: 2021_12_07_024755) do
 
   create_table "reservations", force: :cascade do |t|
     t.bigint "user_id", null: false
+    t.bigint "city_id", null: false
     t.bigint "car_id", null: false
     t.string "start_date"
     t.string "end_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["car_id"], name: "index_reservations_on_car_id"
+    t.index ["city_id"], name: "index_reservations_on_city_id"
     t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
@@ -55,7 +54,7 @@ ActiveRecord::Schema.define(version: 2021_12_07_024755) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "cars", "categories"
   add_foreign_key "reservations", "cars"
+  add_foreign_key "reservations", "cities"
   add_foreign_key "reservations", "users"
 end

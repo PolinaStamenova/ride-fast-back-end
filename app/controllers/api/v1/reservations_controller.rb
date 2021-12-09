@@ -1,11 +1,13 @@
 class Api::V1::ReservationsController < ApplicationController
   def index
+    # show all reservations
     @reservations = Reservation.all
 
     render json: { data: @reservations }, status: :created
   end
 
   def create
+    # create new reservation
     @reservation = Reservation.new(reservations_params)
 
     if @reservation.save
@@ -21,6 +23,7 @@ class Api::V1::ReservationsController < ApplicationController
     params.require(:reservation).permit(
       :user_id,
       :car_id,
+      :city_id,
       :start_date,
       :end_date
     )

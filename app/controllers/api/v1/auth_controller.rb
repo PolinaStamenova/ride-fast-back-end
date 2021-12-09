@@ -4,21 +4,9 @@ class Api::V1::AuthController < ApplicationController
 
     if @user
       @user.isLoggedIn = true
-
-      # collect user reservations
-      user_reservations = []
-      @user.reservations.each do |r|
-        user_reservations << r
-      end
-
-      render json: {
-        message: "Signin successfully",
-        data: @user,
-        reservations: user_reservations
-      }, status: :created
-
+      render json: { message: 'Signin successfully', data: @user }, status: :created
     else
-      render json: { message: "User does not exist" }, status: :unauthorized
+      render json: { message: 'User does not exist' }, status: :unauthorized
     end
   end
 
@@ -26,9 +14,9 @@ class Api::V1::AuthController < ApplicationController
     @user = User.new(signup_params)
 
     if @user.save
-      render json: { message: "Signup successfully", data: @user }, status: :created
+      render json: { message: 'Signup successfully', data: @user }, status: :created
     else
-      render json: { message: "There was an error" }, status: :unauthorized
+      render json: { message: 'There was an error' }, status: :unauthorized
     end
   end
 
@@ -37,9 +25,9 @@ class Api::V1::AuthController < ApplicationController
 
     if @user
       @user.isLoggedIn = false
-      render json: { message: "Signout successfully", data: @user }, status: :created
+      render json: { message: 'Signout successfully', data: @user }, status: :created
     else
-      render json: { message: "User does not exist" }, status: :unauthorized
+      render json: { message: 'User does not exist' }, status: :unauthorized
     end
   end
 

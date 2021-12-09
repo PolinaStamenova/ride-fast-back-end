@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
 User.create(
     name: "User One",
     username: "user1",
@@ -23,33 +25,84 @@ User.create(
     email: "user3@email.com"
 )
 
-Category.create(name: "Trucks")
-Category.create(name: "Sedan")
-Category.create(name: "SUV")
-Category.create(name: "Van")
-
 Car.create(
-    name: 'Toyota Corrolla',
-    category_id: 2,
+    name: 'Honda Civic',
     description: 'Nice small car',
-    finance_fee: 800.0,
-    purchase_fee: 1200.0,
-    amount_payable: 1000.0
+    price: 800,
+    image: "https://static.fzinternal.com/common/mfg/Honda/2016-honda-civic.png",
+    duration: 12,
+    number_of_seats: 10
 )
 
 Car.create(
     name: 'Toyota Prado',
-    category_id: 3,
     description: 'Nice big car',
-    finance_fee: 800.0,
-    purchase_fee: 1200.0,
-    amount_payable: 1000.0
+    price: 800,
+    image: "https://static.fzinternal.com/common/mfg/Honda/2016-honda-civic.png",
+    duration: 12,
+    number_of_seats: 10
 )
 
+Car.create(
+    name: 'Mazda CX6',
+    description: 'Nice big car',
+    price: 800,
+    image: "https://static.fzinternal.com/common/mfg/Honda/2016-honda-civic.png",
+    duration: 12,
+    number_of_seats: 10
+)
+
+Car.create(
+    name: 'Range Rover',
+    description: 'Nice big car',
+    price: 800,
+    image: "https://static.fzinternal.com/common/mfg/Honda/2016-honda-civic.png",
+    duration: 12,
+    number_of_seats: 10
+)
+
+Car.create(
+    name: 'Mitsubishi Lancer',
+    description: 'Nice big car',
+    price: 800,
+    image: "https://static.fzinternal.com/common/mfg/Honda/2016-honda-civic.png",
+    duration: 12,
+    number_of_seats: 10
+)
+
+Car.create(
+    name: 'Toyota Mark X',
+    description: 'Nice big car',
+    price: 800,
+    image: "https://static.fzinternal.com/common/mfg/Honda/2016-honda-civic.png",
+    duration: 12,
+    number_of_seats: 10
+)
+
+10.times do 
+    City.create(name:Faker::Address.city)
+end
 
 Reservation.create(
     user_id: 1,
     car_id: 1,
+    city_id: 1,
+    start_date: "2021-12-5",
+    end_date: "2021-12-10"
+)
+
+Reservation.create(
+    user_id: 2,
+    car_id: 2,
+    city_id: 2,
+    start_date: "2021-12-5",
+    end_date: "2021-12-10"
+)
+
+Reservation.create(
+    user_id: 1,
+    car_id: 1,
+    city_id: 4,
     start_date: "2021-12-5",
     end_date: "2021-12-10"
 )
