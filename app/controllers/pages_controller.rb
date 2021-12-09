@@ -1,5 +1,5 @@
 class PagesController < ActionController::Base
   def index
-    render render: 'pages/index'
+    redirect_to "/api-docs"
   end
 end

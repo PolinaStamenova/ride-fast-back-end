@@ -27,6 +27,7 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 gem 'rack-cors'
 gem 'rspec-rails'
 gem 'rswag', '~> 2.4'
+gem 'faker'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
