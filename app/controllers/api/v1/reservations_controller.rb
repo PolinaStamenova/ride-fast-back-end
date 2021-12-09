@@ -11,9 +11,9 @@ class Api::V1::ReservationsController < ApplicationController
     @reservation = Reservation.new(reservations_params)
 
     if @reservation.save
-      render json: { message: "Reservation created successfully", data: @reservation }, status: :created
+      render json: { message: 'Reservation created successfully', data: @reservation }, status: :created
     else
-      render json: { message: "There was an error" }, status: :unauthorized
+      render json: { message: 'There was an error' }, status: :unauthorized
     end
   end
 

@@ -11,9 +11,9 @@ class Api::V1::CitiesController < ApplicationController
     @city = City.new(cities_params)
 
     if @city.save
-      render json: { message: "City created successfully", data: @city }, status: :created
+      render json: { message: 'City created successfully', data: @city }, status: :created
     else
-      render json: { message: "There was an error" }, status: :unauthorized
+      render json: { message: 'There was an error' }, status: :unauthorized
     end
   end
 
