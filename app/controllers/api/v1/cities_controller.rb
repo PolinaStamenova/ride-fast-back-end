@@ -17,6 +17,12 @@ class Api::V1::CitiesController < ApplicationController
     end
   end
 
+  def destroy
+    City.find(params[:id]).delete
+
+    render json: { message: "City deleted" }, status: :ok
+  end
+
   private
 
   def cities_params

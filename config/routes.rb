@@ -10,16 +10,13 @@ Rails.application.routes.draw do
       post :signout, to: 'auth#signout' 
       
       # cars
-      get "cars", to: "cars#index"
-      post "cars", to: "cars#create"
+      resources :cars
 
       # reservations
-      get "reservations", to: "reservations#index"
-      post "reservations", to: "reservations#create"
+      resources :reservations
 
       # cities
-      get "cities", to: "cities#index"
-      post "cities", to: "cities#create"
+      resources :cities
     end
   end
 end
