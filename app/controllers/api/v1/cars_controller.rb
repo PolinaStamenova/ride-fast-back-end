@@ -18,11 +18,11 @@ class Api::V1::CarsController < ApplicationController
   def destroy
     car = Car.find(params[:id])
     if car
-      car.reservations.delete_all if car.reservations
+      car.reservations&.delete_all
       car.delete
-      render json: { message: "Car deleted" }, status: :ok
+      render json: { message: 'Car deleted' }, status: :ok
     else
-      render json: { message: "Car not found" }, status: :ok
+      render json: { message: 'Car not found' }, status: :ok
     end
   end
 

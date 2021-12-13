@@ -20,11 +20,11 @@ class Api::V1::CitiesController < ApplicationController
   def destroy
     city = City.find(params[:id])
     if city
-      city.reservations.delete_all if city.reservations
+      city.reservations&.delete_all
       city.delete
-      render json: { message: "City deleted" }, status: :ok
+      render json: { message: 'City deleted' }, status: :ok
     else
-      render json: { message: "City not found" }, status: :ok
+      render json: { message: 'City not found' }, status: :ok
     end
   end
 
