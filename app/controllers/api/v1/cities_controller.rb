@@ -20,7 +20,7 @@ class Api::V1::CitiesController < ApplicationController
   def destroy
     City.find(params[:id]).delete
 
-    render json: { message: "City deleted" }, status: :ok
+    render json: { message: 'City deleted' }, status: :ok
   end
 
   private

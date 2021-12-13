@@ -1,14 +1,13 @@
 class Api::V1::ReservationsController < ApplicationController
   def index
     # show reservations that belongs to a user
-    if(params[:user_id])
+    if params[:user_id]
       @reservations = Reservation.where(user_id: params[:user_id])
 
-      render json: { data: @reservations }, status: :created     
-   else
-      render json: { message: "User ID is required" }
-   end
-  
+      render json: { data: @reservations }, status: :created
+    else
+      render json: { message: 'User ID is required' }
+    end
   end
 
   def create
@@ -25,10 +24,11 @@ class Api::V1::ReservationsController < ApplicationController
   def destroy
     Reservation.find(params[:id]).delete
 
-    render json: { message: "Reservation deleted" }, status: :ok
+    render json: { message: 'Reservation deleted' }, status: :ok
   end
 
   private
+
   def reservations_params
     params.require(:reservation).permit(
       :user_id,
