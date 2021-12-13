@@ -18,9 +18,14 @@ class Api::V1::CitiesController < ApplicationController
   end
 
   def destroy
-    City.find(params[:id]).delete
-
-    render json: { message: 'City deleted' }, status: :ok
+    city = City.find(params[:id])
+    if city
+      city.reservations.delete_all if city.reservations
+      city.delete
+      render json: { message: "City deleted" }, status: :ok
+    else
+      render json: { message: "City not found" }, status: :ok
+    end
   end
 
   private

@@ -22,11 +22,14 @@ class Api::V1::ReservationsController < ApplicationController
   end
 
   def destroy
-    Reservation.find(params[:id]).delete
-
-    render json: { message: 'Reservation deleted' }, status: :ok
+    reservation = Reservation.find(params[:id])
+    if reservation
+      reservation.delete
+      render json: { message: 'Reservation deleted' }, status: :ok
+    else
+      render json: { message: 'Reservation not found' }, status: :ok
+    end
   end
-
   private
 
   def reservations_params
