@@ -105,4 +105,5 @@ Reservation.create(
     city_id: 4,
     start_date: "2021-12-5",
     end_date: "2021-12-10"
+
 )

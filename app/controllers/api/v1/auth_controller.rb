@@ -18,6 +18,7 @@ class Api::V1::AuthController < ApplicationController
       render json: { message: 'Signup successfully', data: @user }, status: :created
     else
       render json: { message: 'User already exists' }, status: :unauthorized
+
     end
   end
 
