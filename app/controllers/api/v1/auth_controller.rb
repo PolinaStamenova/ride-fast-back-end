@@ -3,6 +3,7 @@ class Api::V1::AuthController < ApplicationController
     @user = User.where(username: params[:username]).first
 
     if @user
+      # update isLogged status
       @user.update(isLoggedIn: true)
 
       render json: { message: 'Signin successfully', data: @user }, status: :created
@@ -26,6 +27,7 @@ class Api::V1::AuthController < ApplicationController
     @user = User.find(params[:user_id])
 
     if @user
+      # update isLogged status
       @user.update(isLoggedIn: false)
 
       render json: { message: 'Signout successfully', data: @user }, status: :created
