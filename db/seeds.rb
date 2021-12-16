@@ -78,3 +78,32 @@ Car.create(
     duration: 12,
     number_of_seats: 10
 )
+
+10.times do 
+    City.create(name:Faker::Address.city)
+end
+
+Reservation.create(
+    user_id: 1,
+    car_id: 1,
+    city_id: 1,
+    start_date: "2021-12-5",
+    end_date: "2021-12-10"
+)
+
+Reservation.create(
+    user_id: 2,
+    car_id: 2,
+    city_id: 2,
+    start_date: "2021-12-5",
+    end_date: "2021-12-10"
+)
+
+Reservation.create(
+    user_id: 1,
+    car_id: 1,
+    city_id: 4,
+    start_date: "2021-12-5",
+    end_date: "2021-12-10"
+
+)
