@@ -73,6 +73,8 @@ GEM
     email_validator (2.2.3)
       activemodel
     erubi (1.10.0)
+    faker (2.19.0)
+      i18n (>= 1.6, < 2)
     globalid (1.0.0)
       activesupport (>= 5.0)
     i18n (1.8.11)
@@ -202,12 +204,14 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   email_validator
+  faker
   pg (~> 1.1)
   puma (~> 5.0)
   rack-cors
   rails (~> 6.1.4, >= 6.1.4.1)
   rspec-rails
   rswag (~> 2.4)
+  rswag-specs
   rubocop (>= 1.0, < 2.0)
   tzinfo-data
 
