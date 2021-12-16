@@ -3,6 +3,7 @@ openapi: 3.0.1
 info:
   title: API V1
   version: v1
+
   description: "Ride Fast Backend"
 
 paths:
@@ -193,6 +194,7 @@ paths:
           in: path
           required: true
           schema:
+
             type: integer
       responses:
         "200":
@@ -204,6 +206,7 @@ paths:
                 properties:
                   id:
                     type: integer
+
                 required:
                   - id
         "404":
@@ -227,6 +230,7 @@ paths:
           description: city found and deleted
           content:
             application/json:
+
               schema:
                 type: object
                 properties:
