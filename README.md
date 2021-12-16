@@ -1,4 +1,6 @@
-# README
+![](https://camo.githubusercontent.com/8a4ae3fb98faf74ddf78a6677ceaa6e8872f7f340f569b7c5e1aa9bcc4061d95/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4d6963726f76657273652d626c756576696f6c6574)
+
+# Ride Fast - Final capstone project
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
@@ -15,17 +17,26 @@ Things you may want to cover:
 
 - Database initialization# Final group project - Back end:
 
-This project is created, in order to be used as an Api in a React project.
+> This project is created, in order to be used as an Api in a React project.
 
 ## Description:
 
 The project is used for project where a user can rent a car. The endpoints gives opportunity to a user to add and delete cars. Make reservation for a car and remove it.
 
-[Link to Front end Pproject PR](https://github.com/PolinaStamenova/ride-fast-front-end/pull/11)
+[Link to Front end Project PR](https://github.com/PolinaStamenova/ride-fast-front-end/pull/11)
+
+## App Live link
+
+[Netlify](https://ride-fast-app.netlify.app/)
 
 ## Documentation:
 
 - [Api Documentation](https://ridefast.herokuapp.com/api-docs/index.html)
+
+## Kanban board
+- [Kanban board link](https://github.com/PolinaStamenova/ride-fast-back-end/projects/1)
+- A screenshot of the initial state of our kanban board can be found in [this issue](https://github.com/PolinaStamenova/ride-fast-back-end/issues/29)
+- Our team is made up of four people.
 
 ## Built With
 
