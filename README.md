@@ -23,7 +23,7 @@ Things you may want to cover:
 
 The project is used for project where a user can rent a car. The endpoints gives opportunity to a user to add and delete cars. Make reservation for a car and remove it.
 
-[Link to Front end Project PR](https://github.com/PolinaStamenova/ride-fast-front-end/pull/11)
+[Link to Front end Project Repo](https://github.com/PolinaStamenova/ride-fast-front-end)
 
 ## App Live link
 
