@@ -11,9 +11,11 @@ Rails.application.routes.draw do
       
       # cars
       resources :cars
+      post "delete_car", to: "cars#deleteCar"
 
       # reservations
-      resources :reservations
+      get "reservations/:user_id", to: "reservations#index"
+      resources :reservations, only: [:create, :destroy]
 
       # cities
       resources :cities

@@ -30,7 +30,6 @@ class Api::V1::ReservationsController < ApplicationController
       render json: { message: 'Reservation not found' }, status: :ok
     end
   end
-
   private
 
   def reservations_params
