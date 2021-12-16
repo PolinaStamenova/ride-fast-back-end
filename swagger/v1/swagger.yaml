@@ -1,0 +1,306 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+
+  description: "Ride Fast Backend"
+
+paths:
+  "/signup":
+    post:
+      summary: Creates a user
+      tags:
+        - Sign Up
+      parameters: []
+      responses:
+        "201":
+          description: user created
+        "422":
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                username:
+                  type: string
+                email:
+                  type: string
+              required:
+                - name
+                - username
+                - email
+  "/signin":
+    post:
+      summary: Logs in user
+      tags:
+        - Sign In
+      parameters: []
+      responses:
+        "201":
+          description: user logged in
+        "422":
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+              required:
+                - username
+
+  "/reservations":
+    post:
+      summary: Creates reservation for current user
+      tags:
+        - Reservations
+      parameters: []
+      responses:
+        "201":
+          description: creates reservation for current user
+        "422":
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: integer
+                car_id:
+                  type: integer
+                city_id:
+                  type: integer
+                start_date:
+                  type: string
+                end_date:
+                  type: string
+              required:
+                - user_id
+                - city_id
+                - car_id
+                - start_date
+                - end_date
+
+  "/cars":
+    get:
+      summary: Gets all cars
+      tags:
+        - Cars
+      parameters: []
+      responses:
+        "201":
+          description: gets all cars
+        "422":
+          description: invalid request
+
+    "/cars":
+    post:
+      summary: Creates new car
+      tags:
+        - Cars
+      parameters: []
+      responses:
+        "201":
+          description: creates new car
+        "422":
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                description:
+                  type: string
+                price:
+                  type: integer
+                image:
+                  type: string
+                duration:
+                  type: integer
+                number_of_seats:
+                  type: integer
+              required:
+                - name
+                - price
+                - duration
+                - number_of_seats
+
+  "/cities":
+    get:
+      summary: Gets all cities
+      tags:
+        - Cities
+      parameters: []
+      responses:
+        "201":
+          description: gets all cities
+        "422":
+          description: invalid request
+
+    "/cities":
+    post:
+      summary: Creates new car
+      tags:
+        - Cities
+      parameters: []
+      responses:
+        "201":
+          description: creates new car
+        "422":
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                description:
+                  type: string
+                price:
+                  type: integer
+                image:
+                  type: string
+                duration:
+                  type: integer
+                number_of_seats:
+                  type: integer
+              required:
+                - name
+                - price
+                - duration
+                - number_of_seats
+
+  "/cars/{id}":
+    delete:
+      summary: Deletes a specified car
+      tags:
+        - Cars
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+
+            type: integer
+      responses:
+        "200":
+          description: car found and deleted
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+
+                required:
+                  - id
+        "404":
+          description: car not found
+        "406":
+          description: unsupported accept header
+
+  "/cities/{id}":
+    delete:
+      summary: Deletes a specified city
+      tags:
+        - Cities
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: city found and deleted
+          content:
+            application/json:
+
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                required:
+                  - id
+        "404":
+          description: city not found
+        "406":
+          description: unsupported accept header
+
+  "/reservations/{id}":
+    delete:
+      summary: Deletes a specified reservation
+      tags:
+        - Reservations
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: reservation found and deleted
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                required:
+                  - id
+        "404":
+          description: reservation not found
+        "406":
+          description: unsupported accept header
+
+  "/reservations/{user_id}":
+    get:
+      summary: Gets reservations for a specified user
+      tags:
+        - Reservations
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: user found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user_id:
+                    type: integer
+                required:
+                  - user_id
+        "404":
+          description: user not found
+        "406":
+          description: unsupported accept header
+
+servers:
+  - url: https://ridefast.herokuapp.com/api/v1/
+    variables:
+      defaultHost:
+        default: https://ridefast.herokuapp.com/api/v1/
