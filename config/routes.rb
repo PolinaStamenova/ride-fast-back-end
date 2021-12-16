@@ -11,7 +11,7 @@ Rails.application.routes.draw do
       
       # cars
       resources :cars
-      post "delete_car", to: "cars#deleteCar"
+      post "delete_car", to: "cars#delete_car"
 
       # reservations
       get "reservations/:user_id", to: "reservations#index"
