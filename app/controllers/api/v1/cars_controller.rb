@@ -15,8 +15,9 @@ class Api::V1::CarsController < ApplicationController
     end
   end
 
-  def destroy
-    car = Car.find(params[:id])
+  def delete_car
+    car = Car.find(params[:car_id])
+
     if car
       car.reservations&.delete_all
       car.delete

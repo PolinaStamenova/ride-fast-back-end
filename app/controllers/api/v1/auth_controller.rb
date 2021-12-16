@@ -3,7 +3,9 @@ class Api::V1::AuthController < ApplicationController
     @user = User.where(username: params[:username]).first
 
     if @user
-      @user.isLoggedIn = true
+      # update isLogged status
+      @user.update(isLoggedIn: true)
+
       render json: { message: 'Signin successfully', data: @user }, status: :created
     else
       render json: { message: 'User does not exist' }, status: :unauthorized
@@ -25,7 +27,9 @@ class Api::V1::AuthController < ApplicationController
     @user = User.find(params[:user_id])
 
     if @user
-      @user.isLoggedIn = false
+      # update isLogged status
+      @user.update(isLoggedIn: false)
+
       render json: { message: 'Signout successfully', data: @user }, status: :created
     else
       render json: { message: 'User does not exist' }, status: :unauthorized
